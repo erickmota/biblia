@@ -1,0 +1,75 @@
+#numero_verso{
+
+    color: silver;
+    font-size: 13px;
+
+}
+
+#versao{
+        
+    color: #008ee8;
+    font-size: 15px;
+    font-weight: normal;
+    padding: 5px;
+    border: #008ee8 dashed 1px;
+    border-radius: 10px;
+    
+}
+
+#texto_capitulo{
+
+    font-size: 19px;
+
+}
+
+#setaDown{
+
+    margin-bottom: 0px;
+
+}
+
+#rowBotoes{
+
+    margin-top: -13px;
+
+}
+
+.img-avatar {
+    
+    cursor: default;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.img-avatar-resposta {
+
+    cursor: default;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+#rowCoracaoComent{
+
+    margin-top: -10px;
+
+}
+
+#menuMini{
+
+    cursor: pointer;
+
+}
+
+.btn-sinalizar{
+
+    cursor: pointer;
+
+}

@@ -1,0 +1,87 @@
+#logo{
+
+    margin: 3px;
+    cursor: pointer;
+
+}
+
+#iconeNotificacao{
+
+    margin-top: 27px;
+
+}
+
+#avatarMenu{
+
+    margin-top: 24px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+#linkMenu{
+
+    text-decoration: none;
+
+}
+
+/* Icones do conteúdo do menu */
+#iconesMenu{
+
+    margin-top: -3px;
+    margin-right: 10px;
+
+}
+
+#iconesMenuSair{
+
+    margin-top: -3px;
+    margin-right: 10px;
+    transform: rotate(180deg);
+
+}
+
+/* Icone do menu individual */
+#iconeMenu{
+
+    cursor: pointer;
+
+}
+
+#iconeMarcadorAzul{
+
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 99;
+    border-radius: 50%;
+
+}
+
+#iconeAnotacaorapida{
+
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 5px;
+
+}
+
+#iconeMarcadorBranco1, #iconeMarcadorBranco2, #iconeMarcadorBranco3{
+
+    cursor: pointer;
+
+}
+
+#nomePassagemMarcador1, #nomePassagemMarcador2, #nomePassagemMarcador3{
+
+    font-size: 11px;
+
+}

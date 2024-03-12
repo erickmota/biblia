@@ -1,0 +1,72 @@
+#texto_capitulo{
+
+    font-size: 19px;
+
+}
+
+#versao{
+        
+    color: #008ee8;
+    font-size: 15px;
+    font-weight: normal;
+    padding: 5px;
+    border: #008ee8 dashed 1px;
+    border-radius: 10px;
+    
+}
+
+#numero_verso{
+
+    color: silver;
+    font-size: 13px;
+
+}
+
+#barraTituloLivro{
+
+    height: 27px;
+    background-color: #008ee8;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 99;
+    opacity: 0;
+
+}
+
+#textoTituloBarraAzul{
+
+    margin-top: 1px;
+
+}
+
+#avatarAnotacao{
+
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 5px;
+
+}
+
+#avatarAnotacaoModal{
+
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 5px;
+
+}
+
+pre {
+    white-space: pre-wrap;
+    word-break: keep-all;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
