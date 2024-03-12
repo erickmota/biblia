@@ -3,10 +3,6 @@
 <head>
 
     <?php
-    
-    /* Chamando classe Usuário */
-    include "classes/usuario.class.php";
-    $classeUsuario = new Usuario();
 
     if(isset($_COOKIE["id_usuario_ab"]) && isset($_COOKIE["email_usuario_ab"]) && isset($_COOKIE["senha_usuario_ab"])){
 

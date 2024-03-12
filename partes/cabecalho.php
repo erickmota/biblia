@@ -53,15 +53,7 @@ $(function () {
 
                     <div class="col">
 
-                        <img id="iconeLogin" class="float-right menuLogin" src="img/iconeLogin.png" width="25px" data-toggle="popover" data-placement="bottom">
-
-                        <!-- Menu login -->
-                        <div id="menuLogin-popover" style="display: none">
-
-                            <a id="linkMenu" href="login"><p class="border-bottom mt-3 pb-3 pr-3 pl-3"><img id="iconesMenu" src="./img/entrar.png" width="20px"> Logar-se</p></a>
-                            <a id="linkMenu" href="cadastro"><p class="pr-3 pl-3"><img id="iconesMenu" src="./img/cadastrar.png" width="20px"> Cadastrar-se</p></a>
-                    
-                        </div>
+                        
 
                     </div>
 

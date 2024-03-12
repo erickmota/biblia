@@ -213,28 +213,6 @@ public function retornaVersoes(){
 
 }
 
-/* Salvar passagem quando há um usuário ativo */
-public function salvarPassagem($posicao){
-        
-    include "conexao.class.php";
-    
-    $idUsuario = $_COOKIE["id_usuario_ab"];
-
-    $idDecode = base64_decode($idUsuario);
-    
-    $sql = mysqli_query($conn, "UPDATE usuarios SET livro$posicao='$this->livro' WHERE id='$idDecode'") or die("Erro salvar passagem");
-    $sql = mysqli_query($conn, "UPDATE usuarios SET capitulo$posicao='$this->capitulo' WHERE id='$idDecode'") or die("Erro salvar passagem");
-    
-}
-
-public function denunciarVerso($erroTexto){
-
-    include "conexao.class.php";
-
-    $sql = mysqli_query($conn, "INSERT passagens_erradas (livro, capitulo, verso, erro_texto) VALUES ('$this->livro', $this->capitulo, $this->verso, '$erroTexto')");
-
-}
-
 }
 
 ?>
