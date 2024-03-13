@@ -10,7 +10,9 @@
     include "classes/capitulo.class.php";
     $classeCapitulo = new Capitulo();
 
-    $classeCapitulo->busca = $explode[1];
+    $busca = $_GET['q'];
+
+    $classeCapitulo->busca = $busca;
     ?>
 
     <title>Anotações Bíblicas</title>
@@ -91,7 +93,7 @@
 
             <div class="col-12 col-lg-9">
 
-                <h3 class="mb-5">Buscando por: Teste</h3>
+                <h3 class="mb-5">Buscando por: <?php echo $busca; ?></h3>
 
                 <?php
                 

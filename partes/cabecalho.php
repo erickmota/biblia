@@ -39,9 +39,9 @@ $(function () {
 
             <div class="col-7 col-sm-6 col-md-6 col-lg-6">
 
-                <form class="mt-3">
+                <form class="mt-3" method="GET" action="./acf/busca">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Buscar">
+                        <input type="text" class="form-control" placeholder="Buscar" name="q" required>
                     </div>
                 </form>
 

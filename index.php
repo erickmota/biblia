@@ -12,7 +12,7 @@ if(isset($_GET["url"])){
     /* Página dos números do capítulo */
     }else if(isset($explode[0]) && isset($explode[1]) && !isset($explode[2]) && !isset($explode[3])){
 
-        if($explode[0] == "busca"){
+        if($explode[1] == "busca"){
 
             include "paginas/busca.php";
     
