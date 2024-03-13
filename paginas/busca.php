@@ -6,17 +6,11 @@
 
     @$explode = explode("/", $_GET["url"]);
 
-    if(isset($_COOKIE["id_usuario_ab"]) && isset($_COOKIE["email_usuario_ab"]) && isset($_COOKIE["senha_usuario_ab"])){
-
-        $classeUsuario->idUsuario = $_COOKIE["id_usuario_ab"];
-        $classeUsuario->emailUsuario = $_COOKIE["email_usuario_ab"];
-        $classeUsuario->senhaUsuario = $_COOKIE["senha_usuario_ab"];
-
-    }
-
     /* Chamando classe Capitulo */
     include "classes/capitulo.class.php";
     $classeCapitulo = new Capitulo();
+
+    $classeCapitulo->busca = $explode[1];
     ?>
 
     <title>Anotações Bíblicas</title>
@@ -68,15 +62,7 @@
         <!-- Cabeçalho -->
         <?php
 
-        if(isset($_COOKIE["id_usuario_ab"]) && isset($_COOKIE["email_usuario_ab"]) && isset($_COOKIE["senha_usuario_ab"]) && $classeUsuario->verificaExistenciaUsuario() == true){
-
-            include "partes/cabecalho_logado.php";
-            
-        }else{
-
-            include "partes/cabecalho.php";
-
-        }
+        include "partes/cabecalho.php";
         
         ?>
         <!-- /Cabeçalho -->
@@ -101,9 +87,31 @@
         </div>
         <!-- /Barra azul com o título do livro -->
 
-        <div class="row justify-content-center mt-3">
+        <div class="row justify-content-center mt-5">
 
-            
+            <div class="col-12 col-lg-9">
+
+                <h3 class="mb-5">Buscando por: Teste</h3>
+
+                <?php
+                
+                foreach ($classeCapitulo->buscaVerso() as $arrBusca){
+                
+                ?>
+                
+                <p class="border-bottom pb-4">
+
+                    <b><?php echo $classeCapitulo->retornaLivroPorId($arrBusca["ver_liv_id"]); ?> <?php echo $arrBusca["ver_capitulo"]; ?>:<?php echo $arrBusca["ver_versiculo"]; ?></b> - <?php echo $arrBusca["ver_texto"]; ?>
+
+                </p>
+
+                <?php
+                
+                }
+                
+                ?>
+
+            </div>
 
         </div>
 

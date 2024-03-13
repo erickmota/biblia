@@ -9,6 +9,7 @@ public $livro;
 public $capitulo;
 public $versao;
 public $verso;
+public $busca;
 
 /* Classe responsável por retornar o ID do livro desejado */
 public function retornarIdLivro(){
@@ -210,6 +211,33 @@ public function retornaVersoes(){
     }
 
     return $array;
+
+}
+
+public function buscaVerso(){
+
+    include 'conexao.class.php';
+
+    $sql = mysqli_query($conn, "SELECT * FROM versiculos WHERE ver_texto LIKE '%$this->busca%' ORDER BY ver_id DESC");
+    while ($row = mysqli_fetch_array($sql)){
+
+        $array[] = $row;
+
+    }
+
+    return $array;
+
+}
+
+public function retornaLivroPorId($id_livro){
+
+    include 'conexao.class.php';
+
+    $sql = mysqli_query($conn, "SELECT * FROM livros WHERE liv_id='$id_livro'");
+    $row = mysqli_fetch_array($sql);
+    $nome = $row["liv_nome"];
+
+    return $nome;
 
 }
 

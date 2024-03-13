@@ -12,16 +12,21 @@ if(isset($_GET["url"])){
     /* Página dos números do capítulo */
     }else if(isset($explode[0]) && isset($explode[1]) && !isset($explode[2]) && !isset($explode[3])){
 
-        include "paginas/numero_capitulo.php";
+        if($explode[0] == "busca"){
+
+            include "paginas/busca.php";
+    
+        }else{
+
+            include "paginas/numero_capitulo.php";
+
+        }
+
 
     /* Um explode na URL apenas */
     }else if(isset($explode[0]) && isset($explode[1]) && isset($explode[2]) && isset($explode[3])){
 
         include "paginas/capitulo.php";
-
-    }else if($explode[0] == "busca"){
-
-        include "paginas/busca.php";
 
     }
 
