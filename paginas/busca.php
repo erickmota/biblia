@@ -96,6 +96,12 @@
                 <h3 class="mb-5">Buscando por: <?php echo $busca; ?></h3>
 
                 <?php
+
+                if($classeCapitulo->buscaVerso() == false){
+
+                    echo "Nada encontrado";
+                    
+                }else{
                 
                 foreach ($classeCapitulo->buscaVerso() as $arrBusca){
                 
@@ -103,12 +109,14 @@
                 
                 <p class="border-bottom pb-4">
 
-                    <b><?php echo $classeCapitulo->retornaLivroPorId($arrBusca["ver_liv_id"]); ?> <?php echo $arrBusca["ver_capitulo"]; ?>:<?php echo $arrBusca["ver_versiculo"]; ?></b> - <?php echo $arrBusca["ver_texto"]; ?>
+                    <b><?php echo $arrBusca["liv_nome"]; ?> <?php echo $arrBusca["ver_capitulo"]; ?>:<?php echo $arrBusca["ver_versiculo"]; ?></b> - <?php echo $arrBusca["ver_texto"]; ?>
 
                 </p>
 
                 <?php
                 
+                }
+
                 }
                 
                 ?>

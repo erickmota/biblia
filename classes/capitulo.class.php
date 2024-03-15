@@ -218,26 +218,23 @@ public function buscaVerso(){
 
     include 'conexao.class.php';
 
-    $sql = mysqli_query($conn, "SELECT * FROM versiculos WHERE ver_texto LIKE '%$this->busca%' ORDER BY ver_id DESC");
+    $sql = mysqli_query($conn, "SELECT * FROM versiculos INNER JOIN livros WHERE versiculos.ver_liv_id=livros.liv_id AND versiculos.ver_vrs_id=1 AND versiculos.ver_texto LIKE '%$this->busca%' ORDER BY versiculos.ver_id DESC");
+    $num = mysqli_num_rows($sql);
     while ($row = mysqli_fetch_array($sql)){
 
         $array[] = $row;
 
     }
 
-    return $array;
+    if($num < 1){
 
-}
+        return false;
 
-public function retornaLivroPorId($id_livro){
+    }else{
 
-    include 'conexao.class.php';
+        return $array;
 
-    $sql = mysqli_query($conn, "SELECT * FROM livros WHERE liv_id='$id_livro'");
-    $row = mysqli_fetch_array($sql);
-    $nome = $row["liv_nome"];
-
-    return $nome;
+    }
 
 }
 

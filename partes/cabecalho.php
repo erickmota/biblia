@@ -22,6 +22,14 @@ $(function () {
     
 </script>
 
+<?php
+
+$explode = explode("/", $_GET["url"]);
+
+$versao = $explode[1];
+
+?>
+
 <div class="row justify-content-center mt-2">
 
     <div class="col-12 col-lg-9">
