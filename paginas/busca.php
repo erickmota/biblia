@@ -84,17 +84,19 @@
 
                 <?php
 
-                if($classeCapitulo->buscaVerso() == false){
+                if($classeCapitulo->buscaVerso(0, 20, $busca) == false){
 
                     echo "Nada encontrado";
                     
                 }else{
                 
-                foreach ($classeCapitulo->buscaVerso() as $arrBusca){
+                foreach ($classeCapitulo->buscaVerso(0, 20, $busca) as $arrBusca){
                 
                 ?>
 
                 <p class="border-bottom pb-4">
+
+                    <input type="hidden" id="hiddenPg" value="2">
 
                     <b><?php echo $arrBusca["liv_nome"]; ?> <?php echo $arrBusca["ver_capitulo"]; ?>:<?php echo $arrBusca["ver_versiculo"]; ?></b> - <?php echo $arrBusca["ver_texto"]; ?>
 
@@ -120,7 +122,7 @@
 
             <script>
 
-                function retornaBusca() {
+                function retornaBusca(pg, busca) {
                                             
                     $.ajax({
 
@@ -137,13 +139,13 @@
 
                         }, */
 
-                        /* data: {pg: pg, vMin: vMin, vMax: vMax, sexo: sexo, ordenacao: ordenacao, tamanho: tamanho, categoria: categoria, busca: busca}, */
+                        data: {pg: pg, busca: busca},
 
                         success: function (msg) {
 
                             $("#espacoProdutos").append(msg);
 
-                            $("#botaoMostrar").removeClass("d-none");
+                            $("#btnMais").removeClass("d-none");
                             $("#imgLoading").addClass("d-none");
 
                         }
@@ -157,11 +159,11 @@
                     $("#btnMais").addClass("d-none");
                     /* $("#imgLoading").removeClass("d-none"); */
 
-                    /* var pg = document.getElementById("hiddenPg").value; */
+                    var pg = document.getElementById("hiddenPg").value;
 
-                    retornaBusca();
+                    retornaBusca(pg, "<?php echo $busca; ?>");
 
-                    /* $("#hiddenPg").val(parseInt(pg) + 1); */
+                    $("#hiddenPg").val(parseInt(pg) + 1);
 
                     /* var pgMenosUm = parseInt(pg) - 1; */
 

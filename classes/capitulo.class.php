@@ -214,11 +214,11 @@ public function retornaVersoes(){
 
 }
 
-public function buscaVerso(){
+public function buscaVerso($inicio, $limite, $busca){
 
     include 'conexao.class.php';
 
-    $sql = mysqli_query($conn, "SELECT * FROM versiculos INNER JOIN livros WHERE versiculos.ver_liv_id=livros.liv_id AND versiculos.ver_vrs_id=1 AND versiculos.ver_texto LIKE '%$this->busca%' ORDER BY versiculos.ver_id DESC");
+    $sql = mysqli_query($conn, "SELECT * FROM versiculos INNER JOIN livros WHERE versiculos.ver_liv_id=livros.liv_id AND versiculos.ver_vrs_id=1 AND versiculos.ver_texto LIKE '%$busca%' ORDER BY versiculos.ver_id DESC LIMIT $inicio, $limite");
     $num = mysqli_num_rows($sql);
     while ($row = mysqli_fetch_array($sql)){
 
