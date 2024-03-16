@@ -69,26 +69,6 @@
         ?>
         <!-- /Cabeçalho -->
 
-        <!-- Barra azul com o título do livro -->
-        <div id="barraTituloLivro" class="row justify-content-center">
-
-            <div class="col-12 col-lg-9 text-light text-uppercase font-weight-bold">
-
-                <p id="textoTituloBarraAzul">
-
-                    <?php
-                    
-                    echo "{$explode[0]} {$explode[1]} - {$explode[2]}";
-                    
-                    ?>
-
-                </p>
-
-            </div>
-
-        </div>
-        <!-- /Barra azul com o título do livro -->
-
         <div class="row justify-content-center mt-5">
 
             <div class="col-12 col-lg-9">

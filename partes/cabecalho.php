@@ -1,3 +1,15 @@
+<?php
+
+if(isset($_GET["url"])){
+
+    $explode = explode("/", $_GET["url"]);
+
+    $versao = $explode[1];
+
+}
+
+?>
+
 <link rel="stylesheet" type="text/css" href="css_partes/cabecalho.css">
 
 <script>
@@ -21,14 +33,6 @@ $(function () {
 })
     
 </script>
-
-<?php
-
-$explode = explode("/", $_GET["url"]);
-
-$versao = $explode[1];
-
-?>
 
 <div class="row justify-content-center mt-2">
 

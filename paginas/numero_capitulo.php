@@ -65,15 +65,7 @@
         <!-- Cabeçalho -->
         <?php
 
-        if(isset($_COOKIE["id_usuario_ab"]) && isset($_COOKIE["email_usuario_ab"]) && isset($_COOKIE["senha_usuario_ab"]) && $classeUsuario->verificaExistenciaUsuario() == true){
-
-            include "partes/cabecalho_logado.php";
-            
-        }else{
-
-            include "partes/cabecalho.php";
-
-        }
+        include "partes/cabecalho.php";
         
         ?>
         <!-- /Cabeçalho -->
