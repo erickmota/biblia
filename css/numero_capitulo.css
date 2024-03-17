@@ -1,6 +1,7 @@
 #espacoNumeros{
 
     line-height: 60px;
+    min-height: 70vh;
 
 }
 
@@ -23,11 +24,5 @@
 #numeroIsolado:hover{
 
     background-color: #ececec;
-
-}
-
-#corpoNumeros{
-
-    min-height: 80%;
 
 }
