@@ -45,7 +45,13 @@ foreach ($classeCapitulo->buscaVerso($somaPg, 20, $busca)[0] as $arrBusca){
 
     <p class="border-bottom pb-4">
 
-        <b><?php echo $arrBusca["liv_nome"]; ?> <?php echo $arrBusca["ver_capitulo"]; ?>:<?php echo $arrBusca["ver_versiculo"]; ?></b> - <?php echo $arrBusca["ver_texto"]; ?>
+        <b><?php echo $arrBusca["liv_nome"]; ?> <?php echo $arrBusca["ver_capitulo"]; ?>:<?php echo $arrBusca["ver_versiculo"]; ?></b> - <?php
+                    
+        $texto_formatado = str_ireplace($busca, "<span class='textoBusca'>$busca</span>", $arrBusca["ver_texto"]);
+
+            echo $texto_formatado;
+        
+        ?>
 
     </p>
 

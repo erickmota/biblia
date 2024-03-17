@@ -40,7 +40,7 @@
     
     ?>
 
-    <link rel="stylesheet" href="css/capitulo.css" type="text/css">
+    <link rel="stylesheet" href="css/busca.css" type="text/css">
     <script type="text/javascript" src="js/capitulo.js"></script>
 
     <!-- Scripts q n podem estar em páginas separadas -->
@@ -78,7 +78,9 @@
 
             <div class="col-12 col-lg-9">
 
-                <h3 class="mb-5">Buscando por: <?php echo $busca; ?></h3>
+                <h3 class="mb-5">Buscando por: <span class="textoBusca"><?php echo $busca; ?></span></h3>
+
+                <input type="hidden" id="valorBusca" value="<?php echo $busca; ?>">
                 
                 <div id="espacoProdutos">
 
@@ -86,7 +88,15 @@
 
                 if($classeCapitulo->buscaVerso(0, 20, $busca) == false){
 
-                    echo "Nada encontrado";
+                ?>
+
+                <p class="mt-5 text-center text-secondary">
+
+                    Nada foi encontrado!
+
+                </p>
+
+                <?php
                     
                 }else{
                 
@@ -98,7 +108,13 @@
 
                     <input type="hidden" id="hiddenPg" value="1">
 
-                    <b><?php echo $arrBusca["liv_nome"]; ?> <?php echo $arrBusca["ver_capitulo"]; ?>:<?php echo $arrBusca["ver_versiculo"]; ?></b> - <?php echo $arrBusca["ver_texto"]; ?>
+                    <b><?php echo $arrBusca["liv_nome"]; ?> <?php echo $arrBusca["ver_capitulo"]; ?>:<?php echo $arrBusca["ver_versiculo"]; ?></b> - <?php
+                    
+                    $texto_formatado = str_ireplace($busca, "<span class='textoBusca'>$busca</span>", $arrBusca["ver_texto"]);
+
+                    echo $texto_formatado;
+                    
+                    ?>
 
                 </p>
 
@@ -116,7 +132,7 @@
 
             <?php
             
-            if($classeCapitulo->buscaVerso(0, 20, $busca)[1] < 20){
+            if($classeCapitulo->buscaVerso(0, 20, $busca) < 20){
 
 
 
@@ -139,6 +155,20 @@
             ?>
 
             <script>
+
+                /* Função para localizar um texto na página */
+
+                /* function localizarTexto(){
+
+                    var texto = document.getElementById("valorBusca").value;
+
+                    const myArray = texto.split(" ");
+
+                    alert(myArray[2]);
+
+                } */
+
+                /* Função do ajax */
 
                 function retornaBusca(pg, busca) {
                                             
@@ -176,6 +206,7 @@
 
                     $("#btnMais").addClass("d-none");
                     $("#imgLoading").removeClass("d-none");
+                    /* localizarTexto(); */
 
                     var pg = document.getElementById("hiddenPg").value;
 
