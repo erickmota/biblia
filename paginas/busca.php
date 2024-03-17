@@ -90,13 +90,13 @@
                     
                 }else{
                 
-                foreach ($classeCapitulo->buscaVerso(0, 20, $busca) as $arrBusca){
+                foreach ($classeCapitulo->buscaVerso(0, 20, $busca)[0] as $arrBusca){
                 
                 ?>
 
                 <p class="border-bottom pb-4">
 
-                    <input type="hidden" id="hiddenPg" value="2">
+                    <input type="hidden" id="hiddenPg" value="1">
 
                     <b><?php echo $arrBusca["liv_nome"]; ?> <?php echo $arrBusca["ver_capitulo"]; ?>:<?php echo $arrBusca["ver_versiculo"]; ?></b> - <?php echo $arrBusca["ver_texto"]; ?>
 
@@ -114,11 +114,29 @@
 
             </div>
 
+            <?php
+            
+            if($classeCapitulo->buscaVerso(0, 20, $busca)[1] < 20){
+
+
+
+            }else{
+            
+            ?>
+
             <div class="col-12 col-lg-9 text-center mt-5">
 
                 <button class="btn btn-primary" id="btnMais">Carregar mais</button>
 
+                <img id="imgLoading" src='img/loading.gif' class="d-none" width='80px'>
+
             </div>
+
+            <?php
+            
+            }
+            
+            ?>
 
             <script>
 
@@ -157,7 +175,7 @@
                 $("#btnMais").click(function(){
 
                     $("#btnMais").addClass("d-none");
-                    /* $("#imgLoading").removeClass("d-none"); */
+                    $("#imgLoading").removeClass("d-none");
 
                     var pg = document.getElementById("hiddenPg").value;
 

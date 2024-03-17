@@ -8,33 +8,53 @@ $busca = $_POST["busca"];
 
 ?>
 
-<div>
-
 <?php
 
 $somaPg = $pg * 20;
 
-foreach ($classeCapitulo->buscaVerso($somaPg, 20, $busca) as $arrBusca){
+if($classeCapitulo->buscaVerso($somaPg, 20, $busca) == false){
 
 ?>
 
-<p class="border-bottom pb-4">
+    <div>
 
-    <b><?php echo $arrBusca["liv_nome"]; ?> <?php echo $arrBusca["ver_capitulo"]; ?>:<?php echo $arrBusca["ver_versiculo"]; ?></b> - <?php echo $arrBusca["ver_texto"]; ?>
+        <p class="mt-5 text-center text-secondary">
 
-</p>
+            Isso é tudo!
+
+        </p>
+
+    </div>
+
+    <script>
+
+        $("#btnMais").css("display", "none");
+        
+    </script>
+
+<?php
+
+}else{
+
+
+foreach ($classeCapitulo->buscaVerso($somaPg, 20, $busca)[0] as $arrBusca){
+
+?>
+
+<div>
+
+    <p class="border-bottom pb-4">
+
+        <b><?php echo $arrBusca["liv_nome"]; ?> <?php echo $arrBusca["ver_capitulo"]; ?>:<?php echo $arrBusca["ver_versiculo"]; ?></b> - <?php echo $arrBusca["ver_texto"]; ?>
+
+    </p>
+
+</div>
 
 <?php
 
 }
+
+}
                 
 ?>
-
-</div>
-
-<script>
-
-$("#botaoMostrar").css("display", "none");
-$("#issoETudo").removeClass("d-none");
-    
-</script>

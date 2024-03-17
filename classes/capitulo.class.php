@@ -232,7 +232,9 @@ public function buscaVerso($inicio, $limite, $busca){
 
     }else{
 
-        return $array;
+        $retorno = [$array, $num];
+
+        return $retorno;
 
     }
 
