@@ -10,7 +10,7 @@
 
                 <p class="text-light text-center">
 
-                    © Copyright 2018-2020
+                    Desenvolvido por Erick Mota - © Copyright 2024
 
                 </p>
 
