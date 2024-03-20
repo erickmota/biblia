@@ -7,6 +7,14 @@
 
 #logo{
 
+    margin-top: 15px;
+    cursor: pointer;
+    width: 150px;
+
+}
+
+#logoM{
+
     margin: 3px;
     cursor: pointer;
 

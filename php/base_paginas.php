@@ -1,2 +1,2 @@
-<base href='http://localhost/Biblia/'>
-<!-- <base href='http://localhost/novoAB/sistema/'> -->
+<!-- <base href='http://biblia.erickmota.com'> -->
+<base href='http://localhost/biblia/'>

@@ -44,7 +44,7 @@ $(function () {
 
                 <img onclick="window.location='./'" id="logo" class="d-none d-md-block" src="img/logo.png" width="150px">
 
-                <img onclick="window.location='./'" id="logo" class="d-block d-md-none" src="img/logoMenor.png" height="52px">
+                <img onclick="window.location='./'" id="logoM" class="d-block d-md-none" src="img/logoMenor.png" height="52px">
 
             </div>
 
